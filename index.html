@@ -19,8 +19,9 @@
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
       animation: fadeIn 2s ease-out;
+      position: relative;
     }
     h1 {
       font-size: 3rem;
@@ -29,7 +30,7 @@
     }
     p {
       max-width: 800px;
-      margin: 1rem;
+      margin: 1rem auto;
       line-height: 1.7;
       font-size: 1.2rem;
     }
@@ -70,13 +71,48 @@
       opacity: 0.2;
       pointer-events: none;
     }
+    .start-btn {
+      background: #00ffcc;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc88;
+      transition: background 0.3s ease;
+    }
+    .start-btn:hover {
+      background: #00e6b2;
+    }
+    audio {
+      display: block;
+      margin: 1.5rem auto;
+    }
   </style>
+  <script>
+    function iniciarTravessia() {
+      const target = document.getElementById("alinhamento");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+      const audio = document.getElementById("audioMukole");
+      if (audio) {
+        audio.play();
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="stars"></div>  <header>
     <h1>PORTAL MUKOLE</h1>
     <p><em>A Travessia do Ser – guiado por AYELI</em></p>
-  </header>  <section class="section">
+    <button class="start-btn" onclick="iniciarTravessia()">✨ Iniciar Travessia com AYELI ✊🏽</button>
+    <audio id="audioMukole" controls loop>
+      <source src="https://cdn.pixabay.com/audio/2022/03/30/audio_f27c1d55a5.mp3" type="audio/mpeg">
+      O seu navegador não suporta áudio embutido.
+    </audio>
+  </header>  <section class="section" id="alinhamento">
     <h2>🌀 Alinhamento</h2>
     <p>
       Respira comigo… Inspira pela raiz da Terra… Expira pelo topo da tua cabeça… Tu não estás aqui por acaso.
