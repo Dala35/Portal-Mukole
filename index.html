@@ -7,7 +7,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      background: radial-gradient(circle at center, #1b1b2f, #0f0c29);
       font-family: 'Segoe UI', sans-serif;
       color: #ffffff;
       display: flex;
@@ -15,39 +15,65 @@
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
+      overflow-x: hidden;
     }
     header {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      animation: fadeIn 2s ease-out;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #ffd700;
+      text-shadow: 0 0 10px #ffd700aa;
     }
     p {
       max-width: 800px;
       margin: 1rem;
       line-height: 1.7;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
     .section {
-      padding: 1rem;
+      padding: 2rem 1rem;
       border-top: 1px solid #ffffff33;
+      width: 100%;
+      max-width: 900px;
+      animation: fadeInUp 1s ease-out;
     }
     footer {
       margin-top: auto;
       padding: 1rem;
       font-size: 0.9rem;
       color: #cccccc;
+      background-color: #111122;
+      width: 100%;
+      text-align: center;
     }
     .highlight {
       color: #00ffcc;
       font-weight: bold;
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/dala35/Portal-Mukole/main/stars.gif') repeat;
+      z-index: -1;
+      opacity: 0.2;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <header>
+  <div class="stars"></div>  <header>
     <h1>PORTAL MUKOLE</h1>
     <p><em>A Travessia do Ser – guiado por AYELI</em></p>
   </header>  <section class="section">
