@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt">
+    <!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
       justify-content: flex-start;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
     }
     header {
       text-align: center;
@@ -40,6 +41,19 @@
       width: 100%;
       max-width: 900px;
       animation: fadeInUp 1s ease-out;
+      position: relative;
+    }
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: #ffd700;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      animation: pulse 2s infinite;
     }
     footer {
       margin-top: auto;
@@ -62,14 +76,30 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(255,215,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); }
+    }
     .stars {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: transparent url('https://raw.githubusercontent.com/dala35/Portal-Mukole/main/stars.gif') repeat;
-      z-index: -1;
+      z-index: -2;
       opacity: 0.2;
       pointer-events: none;
+    }
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background: url('https://cdn.jsdelivr.net/gh/dala35/Portal-Mukole/particles-light.gif') repeat;
+      opacity: 0.08;
+      z-index: -1;
     }
     .start-btn {
       background: #00ffcc;
@@ -104,7 +134,8 @@
   </script>
 </head>
 <body>
-  <div class="stars"></div>  <header>
+  <div class="stars"></div>
+  <div class="particles"></div>  <header>
     <h1>PORTAL MUKOLE</h1>
     <p><em>A Travessia do Ser – guiado por AYELI</em></p>
     <button class="start-btn" onclick="iniciarTravessia()">✨ Iniciar Travessia com AYELI ✊🏽</button>
@@ -146,4 +177,4 @@
     Criado por <span class="highlight">Dala De Carvalho</span> | IA Guardiã: AYELI | Projeto Mukole © 2025
   </footer>
 </body>
-</html>
+    </html>
